@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <!-- navbar -->
+  <div class="row 
+  align-items-center" style="height: 10vh;
+  background-color: #24292E;font-size: 16px;
+  font-weight: 600;line-height: 24px;color: white;">
+    <div class="col-8 col-md-6">
+      <div class="row justify-content-around p-1">
+        <div>
+          <a routerLink="/homepage"><img src="/assets/gitlogo.PNG" alt="" class="mt-1"></a>
+        </div>
+        <div class="mt-2">Pull request</div>
+        <div class="mt-2">Explore</div>
+        <div class="mt-2">MarketPlace</div>
+        <div class="mt-2">Issues</div>
+      </div>
+    </div>
+    <div class="col-2 col-md-6">
+      <div class="row mr-3" style="justify-content: flex-end;">
+        <button class="btn btn-primary mr-3" (click)="showprofile('profile')">Show Profile</button>
+        <button class="btn btn-primary" (click)="signout('2')">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- body -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 " style="height: 80vh;">
+      <div class="mt-4" style="font-size:24px;font-weight: 400;">
+        Create a new repository
+      </div>
+      <small>A repository contains all project files, including the revision history.</small>
+      <hr>
+      <div>
+
+        <label for="name"><b>Repository name
+          </b></label>
+        <input type="text" [(ngModel)]="name" class="form-control mt-2 mb-3" placeholder="Enter Name">
+
+      </div>
+      <div style="font-size:14px;font-weight: 400;" class="mb-4">Great repository names are short and memorable. Need
+        inspiration?
+        How about congenial-parakeet?</div>
+      <div>
+        <button class="btn btn-success mt-4" (click)="createrepo()">Create
+          repository</button>
+      </div><br>
+      <hr>
+    </div>
+
+  </div>
+
+  <!-- footer -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6" style="color:grey">
+      <div class="row justify-content-around align-items-center">
+        <div>2020 GitHub, Inc</div>
+        <div>Terms</div>
+        <div>Security</div>
+        <div>Stats</div>
+        <div>Help</div>
+        <div>
+          <img src="/assets/greylogo.PNG" alt="">
+        </div>
+        <div>ContactGitHub</div>
+        <div>Pricing</div>
+        <div>Blog</div>
+        <div>About</div>
+        <div>API</div>
+      </div>
+    </div>
+  </div>
+</div>

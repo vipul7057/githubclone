@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row
+  align-items-center" style="height: 10vh;
+  background-color: #24292E;font-size: 16px;
+  font-weight: 600;line-height: 24px;color: white;justify-content: flex-end;">
+    <div class="col-8 col-md-6">
+      <div class="row justify-content-around p-1">
+        <div>
+          <img src="./assets/gitlogo.PNG" alt="" class="mt-1">
+        </div>
+        <div class="mt-2">Why GitHub?</div>
+        <div class="mt-2">Team</div>
+        <div class="mt-2">Enterprise</div>
+        <div class="mt-2">Explore</div>
+
+      </div>
+    </div>
+    <div class="col-4 col-md-6">
+      <div class="row mr-2" style="justify-content:flex-end;">
+        <div>
+          <a routerLink="/1"> <button class="btn btn-success btn-lg
+          btn-outline-dark">Sign In</button></a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="row justify-content-center align-items-center" style="background-image: linear-gradient(white,blue);">
+    <div class="col-12 col-md-6">
+      <div class="row justify-content-center align-items-center" style="height: 90vh;">
+        <div style="height: 40vh;width: 350px;">
+          <div style="font-size :64px
+          ;font-weight: 600;
+          line-height: 64px;" class="mb-4">Built for developers</div>
+          <div style="font-size: 20px;
+          font-weight: 400;
+          line-height: 30px;">GitHub is a development platform inspired by the way you work. From open source to
+            business, you can host
+            and review code, manage projects, and build software alongside 50 million developers.</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="row justify-content-center  align-items-center align-items-center" style="height: 90vh;">
+        <div style="height: 60vh;background-color: white;
+        width: 50%;border-radius: 15px;">
+
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;"
+            class="mt-4 pt-4" [formGroup]="forms">
+
+            <div class="form-group">
+              <label for="username" style="font-size: 14px;
+              font-weight: 600;
+              line-height: 21px;">Username</label>
+              <input formControlName="username" id="username" type="text" class="form-control">
+
+              <div *ngIf="forms.get('username').invalid && forms.get('username').touched" style="color: red;">
+                <small>Enter Valid username</small>
+              </div>
+              <div *ngIf="forms.get('username').valid" style="color: green;">
+                <i>Validated</i>
+              </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="email" style="font-size: 14px;
+              font-weight: 600;
+              line-height: 21px;">Email</label>
+              <input id="email" formControlName="email" type="text" class="form-control">
+
+              <div *ngIf="forms.get('email').invalid && forms.get('email').touched" style="color: red;">
+                <small>Enter Valid Email Address</small>
+              </div>
+
+              <div *ngIf="forms.get('email').valid && forms.get('email').touched" style="color: green;">
+                <i>Validated</i>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="password" style="font-size: 14px;
+              font-weight: 600;
+              line-height: 21px;">Password</label>
+              <input id="password" formControlName="password" type="text" class="form-control">
+
+              <div *ngIf="forms.get('password').invalid && forms.get('password').touched" style="color: red;">
+                <small>Enter Valid Password</small>
+              </div>
+              <div *ngIf="forms.get('password').valid && forms.get('password').untouched" style="color: green;">
+                <i>Validated</i>
+              </div>
+
+            </div>
+          </div>
+
+          <div style="display: flex;justify-content: center;">
+            <button class="btn btn-success" (click)="registerUser()" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

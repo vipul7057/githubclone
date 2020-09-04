@@ -1,0 +1,69 @@
+<div class="container-fluid" style="height: 100vh;background-color:#F9F9F9">
+  <div class="row justify-content-center algin-items-center">
+    <div class="col-7 col-md-4" style="height: 100vh">
+      <div class="row align-items-center" style="height: 100vh;flex-direction: column;
+                   padding-top: 70px">
+        <div class="mb-4">
+          <img src="./assets/git.PNG" alt="">
+        </div>
+        <div style="font-size: 24px;
+                       font-weight: 300;line-height: 36px;color: rgb(51,51,51)" class="mb-4">
+          Sign in to GitHub
+        </div>
+
+        <!-- form -->
+        <div style="height: 40vh;width: 290px;padding-top:40px;
+                       padding-left: 20px;
+                       padding-right: 20px;
+                       background-color: white;border-radius: 20px;
+                       border: 1px solid lightgrey;font-size: 14px" class="" [formGroup]="forms">
+          <div>
+            <label for="username">Email address</label>
+          </div>
+          <div>
+            <input type="text" formControlName="email" id="username" class="form-control mb-2">
+          </div>
+          <div *ngIf="forms.get('email').invalid && forms.get('email').touched" style="color: red;">
+            <small>Enter Valid Email Address</small>
+          </div>
+
+          <div *ngIf="forms.get('email').valid && forms.get('email').touched" style="color: green;">
+            <i>Validated</i>
+          </div>
+
+
+
+          <div class="row" style="justify-content:space-between">
+            <div>
+              <label for="password" class="ml-3">Password</label>
+            </div>
+            <div><a routerLink="/forgotpassword" class="mr-3">Forgot Password?</a></div>
+          </div>
+          <div>
+            <input type="text" formControlName="password" id="password" class="form-control mb-2">
+          </div>
+          <div>
+            <div *ngIf="forms.get('password').invalid && forms.get('password').touched" style="color: red;">
+              <small>Enter Valid Password</small>
+            </div>
+            <div *ngIf="forms.get('password').valid && forms.get('password').untouched" style="color: green;">
+              <i>Validated</i>
+            </div>
+            <button class="btn btn-success btn-block" (click)="readdata()">Sign
+              in</button>
+
+          </div>
+        </div>
+        <div class="mt-3 " style="height: 50px;background-color: white;border: 1px solid lightgrey;
+                       border-radius: 10px;
+                       padding-top: 10px;
+                       padding-left: 10px;
+                       padding-right: 30px">
+          New to GitHub?
+          <a routerLink="/2"><span class="ml-2">Create an account</span></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

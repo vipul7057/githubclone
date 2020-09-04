@@ -1,0 +1,182 @@
+<div class="container-fluid">
+  <!-- navbar -->
+  <div class="row 
+  align-items-center" style="height: 10vh;
+  background-color: #24292E;font-size: 16px;
+  font-weight: 600;line-height: 24px;color: white;">
+    <div class="col-8 col-md-6">
+      <div class="row justify-content-around p-1">
+        <div>
+          <a routerLink="/homepage"><img src="/assets/gitlogo.PNG" alt="" class="mt-1"></a>
+        </div>
+        <div class="mt-2">Pull request</div>
+        <div class="mt-2">Explore</div>
+        <div class="mt-2">MarketPlace</div>
+        <div class="mt-2">Issues</div>
+      </div>
+    </div>
+    <div class="col-2 col-md-6">
+      <div class="row mr-3" style="justify-content: flex-end;">
+        <button class="btn btn-primary mr-3" (click)="showprofile('profile')">Show Profile</button>
+        <button class="btn btn-primary" (click)="signout('2')">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="row">
+    <div class="col-12">
+      <div class="col-4 font-size:12px" style="color:blue"></div>
+    </div>
+    <br> <br>
+    <div class="row">
+      <div class="col" style="margin-left: 14px;">
+
+        <a href="" class="col-md-1  black">
+          <> Code
+        </a>
+        <a href="" class="col-sm-1  black">
+          <img src="https://s3.amazonaws.com/kinlane-productions/github/github-issue-opened.png" alt="Logo"
+            style="width:20px; border-radius: 45%;">
+          Issue
+        </a>
+        <a href="" class="col-md-1  black">
+          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/git-pull-request-647176.png" alt="
+                            logo" style=" width:20px;display: inline-block;">
+          Pull request</a>
+        <a href="" class="col-sm-1  black ">
+          <img src="https://img.favpng.com/11/16/16/computer-icons-youtube-play-button-clip-art-png-favpng-1pNUNHSAxSxc1FMHD6MXS3UEM.jpg
+                          " alt="logo" style=" width:28px;display: inline-block;">
+          Actions</a>
+        <a href="" class="col-md-1  black">
+          <img src="https://cdn3.iconfinder.com/data/icons/project-management-regular/64/statistisc_bar_chart_reporting_project_management_business_office_working-512.png
+                                " alt="logo" style=" width:28px;display: inline-block;">
+          Projects</a>
+        <a href="" class="col-sm-1 black">
+          <img src="https://www.vippng.com/png/detail/221-2219013_magazine-comments-magazine-icon-png.png" alt="
+                            logo" style=" width:28px;display: inline-block;">
+          Wikipedia</a>
+        <a href="" class="col-md-1  black">
+          <img src="https://cdn4.iconfinder.com/data/icons/flat-design-security-set-one/24/shield-gray-contour-512.png"
+            alt="logo" style=" width:22px;display: inline-block;">
+          Security</a>
+        <a href="" class="col-sm-1  black">
+          <img src="https://cdn1.iconfinder.com/data/icons/social-object-set-2-1/74/28-512.png" alt="logo"
+            style=" width:20px;display: inline-block;">
+          Insights</a>
+
+        <a routerLink="/showfile"><button class="btn btn-secondary">Show Files</button></a>
+
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- contents -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-md-5">
+            <!-- Master -->
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img style="width:20px;"
+                src="https://mpng.subpng.com/20180716/tqx/kisspng-computer-icons-git-branching-clip-art-fork-git-5b4d48a3433994.1724267915317915232754.jpg"
+                alt="">
+              Master
+            </button>
+
+            <!-- Branches -->
+            <a href="" style="color:black ;margin-left: 5px;">
+              <img style="width:20px;"
+                src="https://mpng.subpng.com/20180716/tqx/kisspng-computer-icons-git-branching-clip-art-fork-git-5b4d48a3433994.1724267915317915232754.jpg"
+                alt="">
+              Branches
+            </a>
+
+            <!-- Tags -->
+            <a href="" style="color:black ;margin-left:10px;">
+              <img style="width:20px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2Wtgmlgq2Spd46qp983W0Lq6-6ffehrYbbg&usqp=CAU"
+                alt="">
+              Tags
+            </a>
+          </div>
+
+          <div class="col-md-5 justify-content-end">
+            <div class="row">
+              <div class="col-3 col-md-3">
+                <input type="text" placeholder="Create file" [(ngModel)]="filename" class="form-control mr-2"
+                  style="width: 120px;">
+              </div>
+
+              <div class="col-4 col-md-3">
+                <!-- Add file -->
+                <button class="btn btn-success" (click)="addfile()">Add</button>
+              </div>
+
+              <div class="col-md-3 col-3">
+                <input type="text" class="form-control" [(ngModel)]="editfilename" style=" width: 120px;"
+                  placeholder="File Name">
+              </div>
+              <div class="col-md-3 col-3">
+                <button class="btn btn-success" (click)="editfile()">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- filecontentbox -->
+        <div class="row mt-2">
+          <div class="col-12 col-md-12">
+            <div id="contentbox" style="display:none">
+              <!-- <input type="text" style="height: 400px;width: 950px;"> -->
+              <textarea rows="14" cols="110" [(ngModel)]="filecontent"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4">
+        <h6>About</h6>
+        <p>No description, website, or topics provided.
+        </p>
+        <br><br>
+        <hr style=" width:80%;text-align:left;margin-left:0">
+
+        <h6>Release</h6>
+        <p>No releases published</p>
+        <br><br>
+        <hr style="width:80%;text-align:left;margin-left:0">
+
+        <h6> Package </h6>
+        <p>No packages published</p>
+        <br><br>
+        <hr style="width:80%;text-align:left;margin-left:0">
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="row" id="footer" style="margin-left: 20px;margin-right: 20px;">
+    <div class="col-12 ">
+      © 2020 GitHub, Inc.
+      <a href="" class="col-md-1">Terms</a>
+      <a href="" class="col-md-1">Privacy</a>
+      <a href="" class="col-md-1">Security</a>
+      <a href="" class="col-md-1">Status</a>
+      <a href="" class="col-md-1">Help</a>
+      <a href="" class="col-lg-1 justify-content-center">
+        <img src="/assets/greylogo.PNG" class="align-items: center; " alt="gitlogo" width="60px"> </a>
+      <a href="" class="col-md-1">Contact GitHub</a>
+      <a href="" class="col-md-1">Pricing</a>
+      <a href="" class="col-md-1">API</a>
+      <a href="" class="col-md-1">Training</a>
+      <a href="" class="col-md-1">Blog</a>
+      <a href="" class="col-md-1">About</a>
+    </div>
+  </div>
+
+</div>

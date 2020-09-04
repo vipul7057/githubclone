@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row 
+  align-items-center" style="height: 10vh;
+  background-color: #24292E;font-size: 16px;
+  font-weight: 600;line-height: 24px;color: white;">
+    <div class="col-8 col-md-6">
+      <div class="row justify-content-around p-1">
+        <div>
+          <a routerLink="/homepage"><img src="/assets/gitlogo.PNG" alt="" class="mt-1"></a>
+        </div>
+        <div class="mt-2">Pull request</div>
+        <div class="mt-2">Explore</div>
+        <div class="mt-2">MarketPlace</div>
+        <div class="mt-2">Issues</div>
+      </div>
+    </div>
+
+    <div class="col-2 col-md-6">
+      <div class="row mr-3" style="justify-content: flex-end;">
+
+        <button class="btn btn-primary" (click)="signout('2')">Logout</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <div class="row justify-content-center mt-3" style="flex-direction: column;align-items: center;">
+      <img src="https://cdn2.iconfinder.com/data/icons/facebook-51/32/FACEBOOK_LINE-01-512.png" style="height: 200px;
+      width: 200px;" alt="">
+      <div class="mt-4" style="height: 300px;width: 300px">
+        <div class="row">
+          <h3><i>userName:</i></h3>
+          <h3><i>{{c[0].username}}</i></h3>
+        </div>
+        <div class="row">
+          <h3><i>Email Address:</i></h3>
+          <h3><i>{{c[0].email}}</i></h3>
+        </div>
+        <button class="btn btn-danger mt-4" (click)="deleteAccount()">Delete Account</button>
+      </div>
+
+    </div>
+  </div>
+</div>
